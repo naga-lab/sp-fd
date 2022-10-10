@@ -15,8 +15,6 @@ permissions:
   contents: read
 
     steps:
-
-      # Checkout code
     - uses: actions/checkout@main
 
       # Log into Azure
