@@ -2,7 +2,7 @@ on:
 
   workflow_dispatch:
 
-name: fd-Test
+name: fdTest
 
 jobs:
 
@@ -17,7 +17,6 @@ permissions:
     steps:
 
       # Checkout code
-
     - uses: actions/checkout@main
 
       # Log into Azure
