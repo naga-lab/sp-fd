@@ -29,7 +29,7 @@ jobs:
       uses: azure/arm-deploy@v1
 
       with:
-        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        subscriptionId: ${{ secrets.AZURE_TEST_SUBID }}
         resourceGroupName: ${{ secrets.LAB_AZURE_RG }}
 
         template: ./code/storage.json
