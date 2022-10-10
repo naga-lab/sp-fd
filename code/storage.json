@@ -24,7 +24,7 @@
         }
     },
     "variables": {
-        "storageAccountName": "[concat('fdst', uniquestring(resourceGroup().id))]"
+        "storageAccountName": "[concat('store', uniquestring(resourceGroup().id))]"
     },
     "resources": [{
         "type": "Microsoft.Storage/storageAccounts",
