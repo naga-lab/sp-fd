@@ -3,16 +3,15 @@ on:
   workflow_dispatch:
 
 name: fdTest
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
-
   deploy:
 
     environment: Test
     runs-on: ubuntu-latest
-permissions:
-  id-token: write
-  contents: read
 
     steps:
     - uses: actions/checkout@main
