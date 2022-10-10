@@ -1,0 +1,39 @@
+on:
+
+  workflow_dispatch:
+
+name: fd-Test
+
+jobs:
+
+  deploy:
+
+    environment: Test
+    runs-on: ubuntu-latest
+permissions:
+  id-token: write
+  contents: read
+
+    steps:
+
+      # Checkout code
+
+    - uses: actions/checkout@main
+
+      # Log into Azure
+    - uses: azure/login@v1
+
+      with:
+        client-id: ${{ secrets.AZURE_TEST_CLIENTID }}
+        tenant-id: ${{ secrets.AZURE_TEST_TENANTID }}
+        subscription-id: ${{ secrets.AZURE_TEST_SUBID }}
+
+    - name: deploy_dev_storage
+
+      uses: azure/arm-deploy@v1
+
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        resourceGroupName: ${{ secrets.LAB_AZURE_RG }}
+
+        template: ./code/storage.json
